@@ -1,0 +1,52 @@
+:root {
+  --small: 1rem;
+  --medium: 1.5rem;
+  --large: 2rem;
+  --black: #000000;
+  --white: #ffffff;
+  --blue: #335b9b;
+  --dark-blue: #254270;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.blue {
+  color: var(--blue);
+}
+
+main {
+  flex: 1;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: var(--white);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  color: var(--blue);
+  text-decoration: none;
+  font-size: var(--small);
+}
