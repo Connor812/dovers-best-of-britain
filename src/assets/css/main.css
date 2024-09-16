@@ -1,7 +1,9 @@
 :root {
+  --times-regular: "Times New Roman", Times, serif;
   --small: 1rem;
   --medium: 1.5rem;
   --large: 2rem;
+  --x-large: 3rem;
   --black: #000000;
   --white: #ffffff;
   --blue: #335b9b;
