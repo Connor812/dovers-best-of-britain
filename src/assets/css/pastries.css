@@ -1,0 +1,61 @@
+.shop-pastries-container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+.pastry {
+  display: flex;
+  border: 2px solid var(--black);
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 830px) {
+  .pastry {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pastry:nth-child(even) {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .pastry-pricing-container {
+    flex-direction: column;
+    gap: 10px !important;
+  }
+}
+
+.pastry:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.pastry-img-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pastry-img {
+  width: 100%;
+  height: auto;
+}
+
+.pastry-info-container {
+  width: 50%;
+  text-align: start;
+}
+
+.pastry-title {
+  color: var(--blue);
+  text-align: center;
+}
+
+.pastry-pricing-container {
+  display: flex;
+  justify-content: start;
+  gap: 80px;
+  align-items: center;
+}

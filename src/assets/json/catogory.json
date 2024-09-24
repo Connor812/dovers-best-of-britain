@@ -1,0 +1,231 @@
+{
+    "objects": [
+      {
+        "type": "CATEGORY",
+        "id": "ZXP76GN5U4NOKHLBSZ6OC76P",
+        "updated_at": "2024-09-03T14:19:06.337Z",
+        "created_at": "2024-09-03T14:19:06.392Z",
+        "version": 1725373146337,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Grocery",
+          "category_type": "REGULAR_CATEGORY",
+          "parent_category": {
+            "ordinal": -2251731094208512
+          },
+          "is_top_level": true,
+          "online_visibility": true
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "4I5TINOL7CA24PDCHU5WILON",
+        "updated_at": "2024-09-03T14:19:30.5Z",
+        "created_at": "2024-09-03T14:19:30.547Z",
+        "version": 1725373170500,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Crisps",
+          "category_type": "REGULAR_CATEGORY",
+          "parent_category": {
+            "ordinal": -2251662374731776
+          },
+          "is_top_level": true,
+          "online_visibility": true
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "DJCSHY76ECKBU25IGH4W7TLK",
+        "updated_at": "2024-09-03T14:19:44.62Z",
+        "created_at": "2024-09-03T14:19:44.654Z",
+        "version": 1725373184620,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Beverages",
+          "category_type": "REGULAR_CATEGORY",
+          "parent_category": {
+            "ordinal": -2251593655255040
+          },
+          "is_top_level": true,
+          "online_visibility": true
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "3Q6B3Z5HW4GHDLDJAYAGXVMR",
+        "updated_at": "2024-09-03T14:19:56.116Z",
+        "created_at": "2024-09-03T14:19:56.158Z",
+        "version": 1725373196116,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Chocolate",
+          "category_type": "REGULAR_CATEGORY",
+          "parent_category": {
+            "ordinal": -2251524935778304
+          },
+          "is_top_level": true,
+          "online_visibility": true
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "4Y3TAHUZNQECGHB4QK2YD5YG",
+        "updated_at": "2024-09-03T14:20:15.18Z",
+        "created_at": "2024-09-03T14:20:15.234Z",
+        "version": 1725373215180,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Biscuits",
+          "category_type": "REGULAR_CATEGORY",
+          "parent_category": {
+            "ordinal": -2251456216301568
+          },
+          "is_top_level": true,
+          "online_visibility": true
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "VSK5KKPSF5D22WU3SNRHJN2B",
+        "updated_at": "2024-09-03T14:20:25.009Z",
+        "created_at": "2024-09-03T14:20:25.059Z",
+        "version": 1725373225009,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Sweets",
+          "category_type": "REGULAR_CATEGORY",
+          "parent_category": {
+            "ordinal": -2251387496824832
+          },
+          "is_top_level": true,
+          "online_visibility": true
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "PKDOP7SEUZ7SNKSLXCNN36OY",
+        "updated_at": "2024-09-03T14:20:41.848Z",
+        "created_at": "2024-09-03T14:20:41.885Z",
+        "version": 1725373241848,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Bakery",
+          "category_type": "REGULAR_CATEGORY",
+          "parent_category": {
+            "ordinal": -2251318777348096
+          },
+          "is_top_level": true,
+          "online_visibility": true
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "JU7PZOBDHTOGFRJRH6YXXWHV",
+        "updated_at": "2024-09-03T14:21:09.82Z",
+        "created_at": "2024-09-03T14:21:09.867Z",
+        "version": 1725373269820,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Meat Pies",
+          "category_type": "REGULAR_CATEGORY",
+          "parent_category": {
+            "id": "PKDOP7SEUZ7SNKSLXCNN36OY",
+            "ordinal": -2251731094208512
+          },
+          "is_top_level": false,
+          "online_visibility": true,
+          "root_category": "PKDOP7SEUZ7SNKSLXCNN36OY"
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "VFL7VPJEN5KACSX3ZI2BX3XC",
+        "updated_at": "2024-09-03T14:23:17.111Z",
+        "created_at": "2024-09-03T14:23:17.148Z",
+        "version": 1725373397111,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Dessert",
+          "category_type": "REGULAR_CATEGORY",
+          "parent_category": {
+            "id": "PKDOP7SEUZ7SNKSLXCNN36OY",
+            "ordinal": -2251662374731776
+          },
+          "is_top_level": false,
+          "online_visibility": true,
+          "root_category": "PKDOP7SEUZ7SNKSLXCNN36OY"
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "LXQT4H67LJFFNXEPZGYOELQW",
+        "updated_at": "2024-09-03T17:50:50.205Z",
+        "created_at": "2024-09-03T17:50:50.272Z",
+        "version": 1725385850205,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Giftware",
+          "category_type": "REGULAR_CATEGORY",
+          "parent_category": {
+            "ordinal": -2251250057871360
+          },
+          "is_top_level": true,
+          "online_visibility": true
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "BXNOBKFOXNYWD45YRXULR7TM",
+        "updated_at": "2024-09-10T15:51:33.585Z",
+        "created_at": "2024-09-10T15:51:33.642Z",
+        "version": 1725983493585,
+        "is_deleted": false,
+        "catalog_v1_ids": [
+          {
+            "catalog_v1_id": "dde32848-b1e1-475d-8a75-b560914743cc",
+            "location_id": "L7DZSNMWB5XTT"
+          }
+        ],
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "multi baked item 6+",
+          "category_type": "REGULAR_CATEGORY",
+          "parent_category": {
+            "ordinal": -2251181338394624
+          },
+          "is_top_level": true,
+          "online_visibility": true
+        }
+      },
+      {
+        "type": "CATEGORY",
+        "id": "UBABGYWGIE3V5V6WSXPPOKBN",
+        "updated_at": "2024-09-24T17:05:20.907Z",
+        "created_at": "2024-09-24T17:05:20.948Z",
+        "version": 1727197520907,
+        "is_deleted": false,
+        "present_at_all_locations": true,
+        "category_data": {
+          "name": "Condiments",
+          "category_type": "REGULAR_CATEGORY",
+          "parent_category": {
+            "ordinal": -2251112618917888
+          },
+          "is_top_level": true,
+          "online_visibility": true
+        }
+      }
+    ],
+    "latest_time": "2024-09-24T17:05:20.907Z"
+  }

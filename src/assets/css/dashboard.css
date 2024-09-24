@@ -1,0 +1,23 @@
+.barcode-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.barcode {
+  width: 450px;
+  border: 1px solid var(--black);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.barcode h3 {
+  font-size: var(--large);
+}
+
+.barcode img {
+  width: 300px;
+  height: auto;
+}

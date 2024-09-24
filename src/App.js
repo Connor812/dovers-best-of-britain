@@ -1,10 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Helmet from "react-helmet";
 import { DataProvider } from "./DataProvider";
+import ProtectedRoute from "./utils/ProtectedRoutes";
 
 import Home from "./pages/Home";
+import ShopProducts from "./pages/ShopProducts";
+import Product from "./pages/Product";
+import Pastries from "./pages/Pastries";
+import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 import Header from "./components/Header";
+import HeaderBlue from "./components/HeaderBlue";
 import Footer from "./components/Footer";
 
 import "./assets/css/main.css";
@@ -22,6 +30,7 @@ function App() {
 }
 
 function AppContent() {
+  const location = useLocation();
   return (
     <>
       <Helmet>
@@ -30,11 +39,19 @@ function AppContent() {
         <meta name="keywords" content="" />
         <meta name="author" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
       </Helmet>
-      <Header />
+
+      {!location.pathname.endsWith("/") ? <HeaderBlue /> : <Header />}
+
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<Home />} />
+        <Route path="/products/:categoryId" element={<ShopProducts />} />
+        <Route path="/product/:id" element={<Product />} />
+        <Route path="/pastries" element={<Pastries />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<ProtectedRoute element={<Dashboard />} />} />
       </Routes>
       <Footer />
     </>

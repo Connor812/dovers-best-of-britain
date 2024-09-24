@@ -8,6 +8,13 @@
   --white: #ffffff;
   --blue: #335b9b;
   --dark-blue: #254270;
+  --blue-opacity: #335b9ba2;
+  --grey: #d7d7d7;
+  --dark-grey: #7f7f7f;
+  --red: #ff0000;
+  --red-hover: #cb0000;
+  --orange: #ff5e00;
+  --orange-hover: #df5200;
 }
 
 html,
@@ -51,4 +58,155 @@ nav ul li a {
   color: var(--blue);
   text-decoration: none;
   font-size: var(--small);
+}
+
+.header-logo {
+  width: 80px;
+  height: auto;
+}
+
+.header-blue {
+  background-color: var(--blue);
+  color: var(--white);
+  position: relative;
+}
+
+.header-blue ul {
+  padding: 10px 0 !important;
+  margin: 0 !important;
+  align-items: end;
+}
+
+.header-blue li a {
+  color: var(--white);
+}
+
+.header-blue li {
+  height: 100%;
+}
+
+.shopping-cart-icon {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+.shopping-cart-icon svg {
+  width: 30px;
+  height: 30px;
+  color: var(--white);
+}
+
+.bar-menu-btn-container {
+  display: none;
+}
+
+.bar-menu-btn {
+  background: none;
+  border: none;
+  border: 2px solid var(--white);
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.bar-menu-btn svg {
+  width: 40px;
+  height: 40px;
+  color: var(--white);
+}
+
+.white-bar-menu-btn {
+  background: none;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  padding: 0 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.white-bar-menu-btn svg {
+  width: 40px;
+  height: 40px;
+  color: var(--blue);
+}
+
+@media screen and (max-width: 1150px) {
+  .bar-menu-btn-container {
+    display: block;
+  }
+  .header-blue-link {
+    display: none;
+  }
+  .header-blue ul {
+    justify-content: start !important;
+    padding-left: 30px !important;
+  }
+  .header-logo {
+    margin-right: 20px;
+  }
+}
+
+.menu-title {
+  font-family: var(--times-regular);
+  font-size: var(--medium) !important;
+  color: var(--blue) !important;
+}
+
+.offcanvas-navbar {
+  list-style: none;
+}
+
+.offcanvas-link {
+  color: var(--black);
+  text-decoration: none;
+  font-size: var(--medium);
+  font-family: var(--times-regular);
+  width: fit-content;
+}
+
+.offcanvas-link::after {
+  background-color: var(--black);
+}
+
+/* Underline styles */
+a {
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
+}
+
+/* Fade in */
+.scroll-in-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  /* background-color: var(--white); */
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.scroll-in-underline:hover::after,
+.scroll-in-underline:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+/* Slide in */
+.scroll-in-underline {
+  overflow: hidden;
+}
+
+.scroll-in-underline::after {
+  opacity: 1;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.scroll-in-underline:hover::after,
+.scroll-in-underline:focus::after {
+  transform: translate3d(0, 0, 0);
 }

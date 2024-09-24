@@ -1,0 +1,130 @@
+{
+  "objects": [
+    {
+      "type": "ITEM",
+      "id": "E6F645R5MN7QNTGUFBG546PD",
+      "updated_at": "2024-09-04T18:09:22.808Z",
+      "created_at": "2024-09-04T18:09:21.168Z",
+      "version": 1725473362808,
+      "is_deleted": false,
+      "present_at_all_locations": true,
+      "item_data": {
+        "name": "Ruffles Rasp&Coconut",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "tax_ids": ["46KNLLTEDD4RG3P5K2DQXDTD"],
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "J45SIIE5CGT2V5HIDC7AWRED",
+            "updated_at": "2024-09-04T18:09:21.726Z",
+            "created_at": "2024-09-04T18:09:21.168Z",
+            "version": 1725473361726,
+            "is_deleted": false,
+            "present_at_all_locations": true,
+            "item_variation_data": {
+              "item_id": "E6F645R5MN7QNTGUFBG546PD",
+              "name": "Regular",
+              "sku": "5010511477173",
+              "upc": "5010511477173",
+              "ordinal": 1,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 499,
+                "currency": "CAD"
+              },
+              "track_inventory": false,
+              "sellable": true,
+              "stockable": true
+            }
+          }
+        ],
+        "product_type": "REGULAR",
+        "skip_modifier_screen": false,
+        "ecom_visibility": "UNINDEXED",
+        "categories": [
+          {
+            "id": "3Q6B3Z5HW4GHDLDJAYAGXVMR",
+            "ordinal": -2251731094208512
+          }
+        ],
+        "pickup_fulfillment_preferences_id": "fprefs_1283qxl99d1s1zv6ef8e9gigt",
+        "delivery_fulfillment_preferences_id": "fprefs_1283qxl980mndkl5kz3guyiyl",
+        "shipping_fulfillment_preferences_id": "fprefs_1283qxl99wujkl00s0bx9sarh",
+        "dine_in_fulfillment_preferences_id": "fprefs_1283qxl98s2r0bgyy9omx01vh",
+        "is_archived": false,
+        "reporting_category": {
+          "id": "3Q6B3Z5HW4GHDLDJAYAGXVMR",
+          "ordinal": -2251731094208512
+        }
+      }
+    },
+    {
+      "type": "ITEM",
+      "id": "ERTWODISWJN45HLCRUAXOZAA",
+      "updated_at": "2024-09-06T16:52:09.452Z",
+      "created_at": "2024-09-06T16:52:08.969Z",
+      "version": 1725641529452,
+      "is_deleted": false,
+      "catalog_v1_ids": [
+        {
+          "catalog_v1_id": "7be74957-e69e-4941-a09e-91f94be43b97",
+          "location_id": "L7DZSNMWB5XTT"
+        }
+      ],
+      "present_at_all_locations": false,
+      "present_at_location_ids": ["L7DZSNMWB5XTT"],
+      "item_data": {
+        "name": "Yorkie Duo Raisin & Biscuit - 66g",
+        "is_taxable": true,
+        "visibility": "PRIVATE",
+        "tax_ids": ["46KNLLTEDD4RG3P5K2DQXDTD"],
+        "variations": [
+          {
+            "type": "ITEM_VARIATION",
+            "id": "ZDGCBKRFLW3E6NCK7ATLCT26",
+            "updated_at": "2024-09-06T16:52:08.902Z",
+            "created_at": "2024-09-06T16:52:08.969Z",
+            "version": 1725641528902,
+            "is_deleted": false,
+            "catalog_v1_ids": [
+              {
+                "catalog_v1_id": "3c009c44-39d9-4ebc-ba4f-1bc2ce77dcbb",
+                "location_id": "L7DZSNMWB5XTT"
+              }
+            ],
+            "present_at_all_locations": false,
+            "present_at_location_ids": ["L7DZSNMWB5XTT"],
+            "item_variation_data": {
+              "item_id": "ERTWODISWJN45HLCRUAXOZAA",
+              "name": "Regular",
+              "sku": "7613034872630",
+              "upc": "7613034043870",
+              "ordinal": 0,
+              "pricing_type": "FIXED_PRICING",
+              "price_money": {
+                "amount": 279,
+                "currency": "CAD"
+              },
+              "sellable": true,
+              "stockable": true
+            }
+          }
+        ],
+        "product_type": "FOOD_AND_BEV",
+        "image_ids": ["R7KHW5IG7YFZI7KPD4RKUREC"],
+        "categories": [
+          {
+            "id": "3Q6B3Z5HW4GHDLDJAYAGXVMR",
+            "ordinal": -2249463351476224
+          }
+        ],
+        "is_archived": false,
+        "reporting_category": {
+          "id": "3Q6B3Z5HW4GHDLDJAYAGXVMR",
+          "ordinal": -2249463351476224
+        }
+      }
+    }
+  ]
+}

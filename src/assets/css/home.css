@@ -2,6 +2,39 @@
   padding: 20px;
 }
 
+@media screen and (max-width: 1150px) {
+  .hero-basket-of-chocolate {
+    display: none;
+  }
+
+  .hero-container-wrapper {
+    margin-top: 20px !important;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  .hero-container {
+    padding-top: 180px !important;
+    height: auto !important;
+    width: fit-content !important;
+    padding: 10px;
+  }
+
+  .home-logo {
+    width: 250px !important;
+    height: 250px !important;
+    top: -50% !important;
+    left: 50% !important;
+    transform: translate(-50%, 40%);
+  }
+}
+
+@media screen and (max-width: 506px) {
+  .hero-container {
+    padding-top: 150px !important;
+  }
+}
+
 .hero-container {
   box-sizing: border-box;
   width: 100%;
@@ -13,7 +46,6 @@
   border-radius: 20px;
   display: flex;
   position: relative;
-  padding-left: 100px;
 }
 
 .hero-text {
@@ -78,93 +110,97 @@
   height: auto;
 }
 
-.pie-day {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
+.shop-online-text {
+  background-color: var(--blue);
   color: var(--white);
-  font-family: var(--times-regular);
-  font-size: var(--x-large);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text-shadow property */
+  text-align: center;
+  width: fit-content;
+  padding: 10px 40px;
+  border-radius: 10px;
+  border: 2px solid var(--dark-blue);
+  margin: 0 !important;
 }
 
-.meat-pie-links {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translate(-50%);
-  width: 85%;
-  display: flex;
-  justify-content: space-evenly;
+.categories-container {
+  box-sizing: border-box;
+  margin: 0 !important;
+  max-width: 1000px;
 }
 
-.meat-pie-links a {
-  color: var(--white);
-  font-size: var(--medium);
-  font-family: var(--times-regular);
-  text-decoration: none;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.735); /* Added text-shadow property */
+.category-container {
+  margin: 0 !important;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-/* Underline styles */
-a {
-  display: block;
-  position: relative;
-  padding: 0.2em 0;
-}
-
-/* Fade in */
-.meat-pie-link::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.category {
+  aspect-ratio: 3/2;
+  box-sizing: border-box;
+  border: 2px solid var(--dark-blue);
   width: 100%;
-  height: 0.1em;
-  background-color: var(--white);
-  opacity: 0;
-  transition: opacity 300ms, transform 300ms;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-position: center;
+  background-size: cover;
 }
 
-.meat-pie-link:hover::after,
-.meat-pie-link:focus::after {
-  opacity: 1;
-  transform: translate3d(0, 0.2em, 0);
-}
-
-/* Slide in */
-.meat-pie-link {
-  overflow: hidden;
-}
-
-.meat-pie-link::after {
-  opacity: 1;
-  transform: translate3d(-100%, 0, 0);
-}
-
-.meat-pie-link:hover::after,
-.meat-pie-link:focus::after {
-  transform: translate3d(0, 0, 0);
-}
-
-.pass-sauce {
-  position: absolute;
-  top: 50%;
-  left: 50px;
-  transform: translate(0, -50%);
+.category-title {
   color: var(--white);
-  font-family: var(--times-regular);
-  font-size: var(--x-large);
+  text-decoration: none;
+  width: 100%;
+  background-color: var(--blue-opacity);
+  padding: 5px 0 !important;
 }
 
-.favs {
-  position: absolute;
-  top: 50%;
-  right: 50px;
-  transform: translate(0, -50%);
-  color: var(--white);
-  font-family: var(--times-regular);
-  font-size: var(--x-large);
+.category-title h1 {
+  margin: 0;
+}
+
+.chocolate-bg {
+  background-image: url("../../../public/assets/images/chocolate.png");
+}
+
+.pastries-bg {
+  background-image: url("../../../public/assets/images/pastries.png");
+}
+
+.biscuits-bg {
+  background-image: url("../../../public/assets/images/biscuts.png");
+}
+
+.condiments-bg {
+  background-image: url("../../../public/assets/images/sauce.png");
+}
+
+.chips-bg {
+  background-image: url("../../../public/assets/images/chips.png");
+}
+
+.beverages-bg {
+  background-image: url("../../../public/assets/images/beverages.png");
+}
+
+.bus-img {
+  aspect-ratio: 3244 / 1676;
+  width: 50%;
+  height: auto;
+}
+
+.description-container {
+  display: flex;
+  gap: 30px;
+}
+
+.description-container p {
+  width: 50%;
+}
+
+@media screen and (max-width: 740px) {
+  .description-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
