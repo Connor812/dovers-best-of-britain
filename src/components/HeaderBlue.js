@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import { Offcanvas } from "react-bootstrap";
+import { Offcanvas, Collapse } from "react-bootstrap";
+import { PostData } from "../utils/PostData";
 import { BsCart4 } from "react-icons/bs";
 import { IoMenu } from "react-icons/io5";
+import { IoIosArrowDown } from "react-icons/io";
 
 function HeaderBlue() {
-
-    const [show, setShow] = React.useState(false);
+    const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [loading, setLoading] = useState(true);
+    const [categories, setCategories] = useState([]);
+    const [error, setError] = useState(null);
+    const [openCategoryId, setOpenCategoryId] = useState(null); // State to track which category is open
+
+    useEffect(() => {
+        PostData("get-categories.php", {}).then((response) => {
+            if (!response.status) {
+                setError(response.error);
+                setLoading(false);
+            } else {
+                setCategories(response.category);
+                setLoading(false);
+            }
+        });
+    }, []);
+
+    const handleToggle = (categoryId) => {
+        setOpenCategoryId((prevId) => (prevId === categoryId ? null : categoryId)); // Toggle open state
+    };
 
     return (
         <>
@@ -24,28 +45,10 @@ function HeaderBlue() {
                         <Link to="/">Home</Link>
                     </li>
                     <li className="header-blue-link">
-                        <Link to="/shop">Shop</Link>
-                    </li>
-                    <li className="header-blue-link">
                         <Link to="/">About Us</Link>
                     </li>
                     <li className="header-blue-link">
-                        <Link to="/pastries">Pastries</Link>
-                    </li>
-                    <li className="header-blue-link">
-                        <Link to="/teas">Teas</Link>
-                    </li>
-                    <li className="header-blue-link">
-                        <Link to="/biscuits">Biscuits</Link>
-                    </li>
-                    <li className="header-blue-link">
-                        <Link to="/chocolate_bars">Chocolate Bars</Link>
-                    </li>
-                    <li className="header-blue-link">
-                        <Link to="/candies">Candies</Link>
-                    </li>
-                    <li className="header-blue-link">
-                        <Link to="/crisps">Crisps</Link>
+                        <Link onClick={handleShow}>Shop</Link>
                     </li>
                 </ul>
                 <Link className="shopping-cart-icon" to="/cart"><BsCart4 /></Link>
@@ -56,33 +59,48 @@ function HeaderBlue() {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <ul className="offcanvas-navbar">
-                        <li className="">
+                        <li>
                             <Link className="offcanvas-link scroll-in-underline" to="/">Home</Link>
                         </li>
-                        <li className="">
-                            <Link className="offcanvas-link scroll-in-underline" to="/shop">Shop</Link>
-                        </li>
-                        <li className="">
-                            <Link className="offcanvas-link scroll-in-underline" to="/">About Us</Link>
-                        </li>
-                        <li className="">
-                            <Link className="offcanvas-link scroll-in-underline" to="/pastries">Pastries</Link>
-                        </li>
-                        <li className="">
-                            <Link className="offcanvas-link scroll-in-underline" to="/teas">Teas</Link>
-                        </li>
-                        <li className="">
-                            <Link className="offcanvas-link scroll-in-underline" to="/biscuits">Biscuits</Link>
-                        </li>
-                        <li className="">
-                            <Link className="offcanvas-link scroll-in-underline" to="/chocolate_bars">Chocolate Bars</Link>
-                        </li>
-                        <li className="">
-                            <Link className="offcanvas-link scroll-in-underline" to="/candies">Candies</Link>
-                        </li>
-                        <li className="">
-                            <Link className="offcanvas-link scroll-in-underline" to="/crisps">Crisps</Link>
-                        </li>
+
+                        {loading ? null : categories.map((category) => (
+                            <li key={category.id} className="offcanvas-item">
+                                {category.subcategories.length > 0 ? (
+                                    <>
+                                        <Link
+                                            className="offcanvas-link scroll-in-underline"
+                                            onClick={() => handleToggle(category.id)} // Toggle on click
+                                            to="#"
+                                        >
+                                            {category.name}
+                                            <IoIosArrowDown
+                                                style={{
+                                                    transition: "transform 0.3s",
+                                                    transform: openCategoryId === category.id ? "rotate(180deg)" : "rotate(0deg)"
+                                                }}
+                                            />
+                                        </Link>
+                                        <Collapse in={openCategoryId === category.id}>
+                                            <div>
+                                                {category.subcategories.map((subcategory) => (
+                                                    <Link
+                                                        key={subcategory.id}
+                                                        className="offcanvas-link d-block"
+                                                        to={`/products/${subcategory.id}`}
+                                                    >
+                                                        {subcategory.name}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </Collapse>
+                                    </>
+                                ) : (
+                                    <Link className="offcanvas-link scroll-in-underline" to={`/products/${category.id}`}>
+                                        {category.name}
+                                    </Link>
+                                )}
+                            </li>
+                        ))}
                     </ul>
                 </Offcanvas.Body>
             </Offcanvas>

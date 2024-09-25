@@ -25,24 +25,6 @@ function Header() {
                     <li className="header-blue-link">
                         <Link to="/">About Us</Link>
                     </li>
-                    <li className="header-blue-link">
-                        <Link to="/pastries">Pastries</Link>
-                    </li>
-                    <li className="header-blue-link">
-                        <Link to="/teas">Teas</Link>
-                    </li>
-                    <li className="header-blue-link">
-                        <Link to="/biscuits">Biscuits</Link>
-                    </li>
-                    <li className="header-blue-link">
-                        <Link to="/chocolate_bars">Chocolate Bars</Link>
-                    </li>
-                    <li className="header-blue-link">
-                        <Link to="/candies">Candies</Link>
-                    </li>
-                    <li className="header-blue-link">
-                        <Link to="/crisps">Crisps</Link>
-                    </li>
                 </ul>
             </nav>
 

@@ -11,6 +11,7 @@ function ShopProducts() {
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
     const [relatedObjects, setRelatedObjects] = useState([]);
+    const [categoryName, setCategoryName] = useState("");
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -21,6 +22,7 @@ function ShopProducts() {
             }
             setProducts(response.objects);
             setRelatedObjects(response.related_objects);
+            setCategoryName(response.category_name);
             setLoading(false);
         })
     }, []);
@@ -60,9 +62,8 @@ function ShopProducts() {
     return (
         <main>
 
-            <h1 className="shopping-category-name">Category Name</h1>
+            <h1 className="shopping-category-name">{categoryName}</h1>
             <center>
-                <p className="shopping-category-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptas reiciendis quos dolores nesciunt minus ea mollitia, magni tenetur, quidem possimus architecto eaque, aliquam aliquid quod. Laboriosam dicta expedita ab!</p>
                 <div className="home-search-container">
                     <input type="text" className="home-search" placeholder="Enter product name, SKU etc..." />
                     <button className="search-icon">
@@ -77,22 +78,26 @@ function ShopProducts() {
 
                 <section className="product-page">
 
-                    {products.map((product, index) => {
-                        return (
-                            <Link key={index} to={`/product/${product.id}`} className="product-container">
-                                <div className="product">
-                                    <div className="product-image-container">
-                                        <img className="product-image" src={getImage(product)} alt="product" />
+                    {products === null || products.length === 0 ?
+                        <>
+                            <h1 className="blue time-regular">
+                                No Products Under This Category
+                            </h1>
+                        </>
+                        : products.map((product, index) => {
+                            return (
+                                <Link key={index} to={`/product/${product.id}`} className="product-container">
+                                    <div className="product">
+                                        <div className="product-image-container">
+                                            <img className="product-image" src={getImage(product)} alt="product" />
+                                        </div>
+                                        <div className="shop-product-name">
+                                            {product.item_data.name}
+                                        </div>
                                     </div>
-                                    <div className="shop-product-name">
-                                        {product.item_data.name}
-                                    </div>
-                                </div>
-                            </Link>
-                        )
-                    })}
-
-
+                                </Link>
+                            )
+                        })}
                 </section>
             </center>
         </main>

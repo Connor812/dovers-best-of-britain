@@ -41,8 +41,8 @@ function AppContent() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Helmet>
 
-      {!location.pathname.endsWith("/") ? <HeaderBlue /> : <Header />}
-
+      {/* {!location.pathname.endsWith("/") ? <HeaderBlue /> : <Header />} */}
+      <HeaderBlue />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Home />} />

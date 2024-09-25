@@ -40,10 +40,8 @@ $data = json_decode($requestBody, true);
 $category_id = $data['category_id'];
 
 try {
-    // Create the exact query for the category
-    $exact_query = new \Square\Models\CatalogQueryExact('category', $category_id);
 
-    // Create the catalog query and set the exact query
+    $exact_query = new \Square\Models\CatalogQueryExact('category', $category_id);
     $query = new \Square\Models\CatalogQuery();
     $query->setExactQuery($exact_query);
 
@@ -63,11 +61,23 @@ try {
         $objects = $result->getObjects(); // Primary objects
         $related_objects = $result->getRelatedObjects(); // Related objects
 
-        // Combine the objects and related objects into a single response if necessary
+        // Find the category name from the related objects
+        $category_name = null;
+        if ($related_objects) {
+            foreach ($related_objects as $related_object) {
+                if ($related_object->getType() === 'CATEGORY' && $related_object->getId() === $category_id) {
+                    $category_name = $related_object->getCategoryData()->getName();
+                    break;
+                }
+            }
+        }
+
+        // Combine the objects, related objects, and category name into a single response if necessary
         $response = [
             'status' => true,
             'objects' => $objects,
-            'related_objects' => $related_objects
+            'related_objects' => $related_objects,
+            'category_name' => $category_name
         ];
 
         echo json_encode($response);

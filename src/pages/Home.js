@@ -16,23 +16,18 @@ function Home() {
                 <div className="hero-container">
                     <img src={Logo} alt="Logo" className="home-logo" />
                     <div className="hero-text">
-                        <span>CONFECTION PERFECTION</span>
+                        <span>Dovers Best Of Britain</span>
                         <br />
-                        British brands that you've been missing
-                        <br />
-                        and pies and pastries that taste like home.
-                        <br /><br />
-                        347 Main Street Port Dover N0A1N0  Map
-                        <br />
-                        Open Tue-Sun 11-5 (226) 290-1868
+                        <p>
+                            Dover's Best of Britain is proud to bring a taste of the UK to Port Dover and the surrounding areas with a delicious assortment of freshly baked British pies, pastries, and sweets. Our pies are baked fresh daily, using authentic recipes that capture the flavors of Britain, bringing comfort and nostalgia to those familiar with British cuisine, while offering a delightful new experience to others.
+                        </p>
                     </div>
-                    <img className="hero-basket-of-chocolate" src={Basket} alt="Basket Of Chocolate" />
                 </div>
             </div>
 
             <center className="mb-4">
                 <p className="blue">
-                    We carry a large range of items that are <br /> popular with English families all over the world.
+                    Search For Your Favourite Products
                 </p>
                 <div className="home-search-container">
                     <input type="text" className="home-search" placeholder="Enter product name, SKU etc..." />
@@ -102,13 +97,12 @@ function Home() {
                         </div>
                     </Col>
                 </Row>
+
+                <section className="description-container">
+                    <img src="/assets/images/bus.png" alt="bus" className="bus-img" />
+                    <p>We are always on the lookout for what is new and popular and ivamus vehicula natoque gravida mattis ut efficitur gravida? Natoque phasellus netus non aliquet ligula. Tempus ac maecenas cubilia vulputate arcu volutpat dolor. Nam taciti potenti lit</p>
+                </section>
             </center>
-
-            <section className="description-container">
-                <img src="/assets/images/bus.png" alt="bus" className="bus-img" />
-                <p>We are always on the lookout for what is new and popular and ivamus vehicula natoque gravida mattis ut efficitur gravida? Natoque phasellus netus non aliquet ligula. Tempus ac maecenas cubilia vulputate arcu volutpat dolor. Nam taciti potenti lit</p>
-            </section>
-
         </main>
     );
 }

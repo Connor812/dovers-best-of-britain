@@ -14,6 +14,7 @@
 }
 
 .product-carousel {
+  max-height: 500px;
   width: 100%;
   height: auto;
   aspect-ratio: 3/3;
@@ -22,7 +23,14 @@
 }
 
 .product-carousel-image {
-  width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+
+.carousel-item {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-name {
