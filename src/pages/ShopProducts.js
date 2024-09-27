@@ -6,49 +6,48 @@ import { Spinner } from "react-bootstrap";
 import "../assets/css/shop-products.css";
 
 function ShopProducts() {
-
     const { categoryId } = useParams();
     const [loading, setLoading] = useState(true);
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState([]); // Ensure this is initialized as an empty array
     const [relatedObjects, setRelatedObjects] = useState([]);
     const [categoryName, setCategoryName] = useState("");
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        PostData("get-items-by-category.php", { category_id: categoryId }).then((response) => {
-            if (!response.status) {
-                setError(response.error);
+        setLoading(true); // Reset loading state when categoryId changes
+        PostData("get-items-by-category.php", { category_id: categoryId })
+            .then((response) => {
+                if (!response.status) {
+                    setError(response.error);
+                } else {
+                    // Ensure products is always an array
+                    setProducts(Array.isArray(response.objects) ? response.objects : []);
+                    setRelatedObjects(response.related_objects || []);
+                    setCategoryName(response.category_name || "Unknown Category");
+                }
                 setLoading(false);
-            }
-            setProducts(response.objects);
-            setRelatedObjects(response.related_objects);
-            setCategoryName(response.category_name);
-            setLoading(false);
-        })
-    }, []);
+            })
+            .catch((fetchError) => {
+                setError(fetchError.message || "An error occurred while fetching data.");
+                setLoading(false);
+            });
+    }, [categoryId]);
 
     function getImage(product) {
-
-        if (product.item_data?.image_ids ?? false) {
-            console.log("Image found for product");
-
+        if (product.item_data?.image_ids?.length > 0) {
             const imageId = product.item_data.image_ids[0];
-            console.log("Image ID: ", imageId);
-
-            return relatedObjects.find((object) => object.id === imageId).image_data.url;
+            const relatedObject = relatedObjects.find((object) => object.id === imageId);
+            return relatedObject ? relatedObject.image_data.url : "/assets/images/product-placeholder.png";
         }
-        console.log("No image found for product");
-
         return "/assets/images/product-placeholder.png";
     }
-
 
     if (loading) {
         return (
             <main className="display-loading">
                 <Spinner animation="border" role="status" />
             </main>
-        )
+        );
     }
 
     if (error) {
@@ -56,12 +55,11 @@ function ShopProducts() {
             <main className="display-error">
                 <h1>{error}</h1>
             </main>
-        )
+        );
     }
 
     return (
         <main>
-
             <h1 className="shopping-category-name">{categoryName}</h1>
             <center>
                 <div className="home-search-container">
@@ -71,33 +69,26 @@ function ShopProducts() {
                     </button>
                 </div>
             </center>
-
-
             <center>
-
-
                 <section className="product-page">
-
-                    {products === null || products.length === 0 ?
-                        <>
-                            <h1 className="blue time-regular">
-                                No Products Under This Category
-                            </h1>
-                        </>
-                        : products.map((product, index) => {
-                            return (
-                                <Link key={index} to={`/product/${product.id}`} className="product-container">
-                                    <div className="product">
-                                        <div className="product-image-container">
-                                            <img className="product-image" src={getImage(product)} alt="product" />
-                                        </div>
-                                        <div className="shop-product-name">
-                                            {product.item_data.name}
-                                        </div>
+                    {products.length === 0 ? (
+                        <h1 className="blue time-regular">
+                            No Products Under This Category
+                        </h1>
+                    ) : (
+                        products.map((product, index) => (
+                            <Link key={index} to={`/product/${product.id}`} className="product-container">
+                                <div className="product">
+                                    <div className="product-image-container">
+                                        <img className="product-image" src={getImage(product)} alt="product" />
                                     </div>
-                                </Link>
-                            )
-                        })}
+                                    <div className="shop-product-name">
+                                        {product.item_data.name}
+                                    </div>
+                                </div>
+                            </Link>
+                        ))
+                    )}
                 </section>
             </center>
         </main>

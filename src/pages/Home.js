@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/logo-white-bg.png";
-import Basket from "../assets/images/basket-of-chocolate.png";
 import { Row, Col, Carousel } from "react-bootstrap";
 
 import { GoSearch } from "react-icons/go";
@@ -16,7 +15,7 @@ function Home() {
                 <div className="hero-container">
                     <img src={Logo} alt="Logo" className="home-logo" />
                     <div className="hero-text">
-                        <span>Dovers Best Of Britain</span>
+                        <span className="time-regular">Dovers Best Of Britain</span>
                         <br />
                         <p>
                             Dover's Best of Britain is proud to bring a taste of the UK to Port Dover and the surrounding areas with a delicious assortment of freshly baked British pies, pastries, and sweets. Our pies are baked fresh daily, using authentic recipes that capture the flavors of Britain, bringing comfort and nostalgia to those familiar with British cuisine, while offering a delightful new experience to others.
@@ -37,17 +36,23 @@ function Home() {
                 </div>
             </center>
 
-            <Carousel className="mb-4" indicators={false} controls={false} interval={3000}>
-                <Carousel.Item className="carousel-item-container">
-                    <img className="home-carousel-img" src="/assets/images/meat-pie.png" alt="Meat Pie" />
+            <Carousel indicators={false} interval={3000}>
+                <Carousel.Item>
+                    <img className="home-carousel-img" src="/assets/images/banner-1.png" alt="" />
                 </Carousel.Item>
-                <Carousel.Item className="carousel-item-container">
-                    <img className="home-carousel-img" src="/assets/images/HP.png" alt="Meat Pie" />
+                <Carousel.Item>
+                    <img className="home-carousel-img" src="/assets/images/banner-2.png" alt="" />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img className="home-carousel-img" src="/assets/images/banner-3.png" alt="" />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img className="home-carousel-img" src="/assets/images/banner-4.png" alt="" />
                 </Carousel.Item>
             </Carousel>
 
             <center className="p-2">
-                <h5 className="shop-online-text mb-4 ">
+                <h5 className="shop-online-text my-4">
                     Shop Online For In Store Pickup
                 </h5>
             </center>
@@ -98,9 +103,11 @@ function Home() {
                     </Col>
                 </Row>
 
+                <h1 className="blue time-regular">About Us</h1>
+                <hr />
                 <section className="description-container">
                     <img src="/assets/images/bus.png" alt="bus" className="bus-img" />
-                    <p>We are always on the lookout for what is new and popular and ivamus vehicula natoque gravida mattis ut efficitur gravida? Natoque phasellus netus non aliquet ligula. Tempus ac maecenas cubilia vulputate arcu volutpat dolor. Nam taciti potenti lit</p>
+                    <p className="about-us-description">We are always on the lookout for what is new and popular and ivamus vehicula natoque gravida mattis ut efficitur gravida? Natoque phasellus netus non aliquet ligula. Tempus ac maecenas cubilia vulputate arcu volutpat dolor. Nam taciti potenti lit</p>
                 </section>
             </center>
         </main>

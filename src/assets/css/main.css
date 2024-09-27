@@ -223,6 +223,40 @@ a {
 
 .footer {
   width: 100%;
-  height: 100px !important;
+  height: auto;
   background-color: var(--blue);
+  padding: 20px;
+}
+
+.footer-contact-us-container {
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-contact-us {
+  flex: 1;
+}
+
+.email-contact {
+  color: var(--white);
+  text-decoration: none;
+  width: fit-content;
+}
+
+.email-contact::after {
+  background-color: var(--white);
+}
+
+.footer-lists {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-contact-us-sections {
+  flex: 1 !important;
+}
+
+.create-by-businesslore {
+  text-align: center;
 }

@@ -28,7 +28,11 @@ function HeaderBlue() {
     }, []);
 
     const handleToggle = (categoryId) => {
-        setOpenCategoryId((prevId) => (prevId === categoryId ? null : categoryId)); // Toggle open state
+        setOpenCategoryId((prevId) => (prevId === categoryId ? null : categoryId));
+    };
+
+    const handleLinkClick = () => {
+        handleClose(); // Close the Offcanvas
     };
 
     return (
@@ -45,7 +49,7 @@ function HeaderBlue() {
                         <Link to="/">Home</Link>
                     </li>
                     <li className="header-blue-link">
-                        <Link to="/">About Us</Link>
+                        <a href="#about-us">About Us</a>
                     </li>
                     <li className="header-blue-link">
                         <Link onClick={handleShow}>Shop</Link>
@@ -60,7 +64,7 @@ function HeaderBlue() {
                 <Offcanvas.Body>
                     <ul className="offcanvas-navbar">
                         <li>
-                            <Link className="offcanvas-link scroll-in-underline" to="/">Home</Link>
+                            <Link className="offcanvas-link scroll-in-underline" to="/" onClick={handleLinkClick}>Home</Link>
                         </li>
 
                         {loading ? null : categories.map((category) => (
@@ -69,7 +73,10 @@ function HeaderBlue() {
                                     <>
                                         <Link
                                             className="offcanvas-link scroll-in-underline"
-                                            onClick={() => handleToggle(category.id)} // Toggle on click
+                                            onClick={() => {
+                                                handleToggle(category.id); // Toggle on click
+                                                handleLinkClick(); // Close Offcanvas
+                                            }}
                                             to="#"
                                         >
                                             {category.name}
@@ -87,6 +94,7 @@ function HeaderBlue() {
                                                         key={subcategory.id}
                                                         className="offcanvas-link d-block"
                                                         to={`/products/${subcategory.id}`}
+                                                        onClick={handleLinkClick} // Close Offcanvas on click
                                                     >
                                                         {subcategory.name}
                                                     </Link>
@@ -95,7 +103,11 @@ function HeaderBlue() {
                                         </Collapse>
                                     </>
                                 ) : (
-                                    <Link className="offcanvas-link scroll-in-underline" to={`/products/${category.id}`}>
+                                    <Link
+                                        className="offcanvas-link scroll-in-underline"
+                                        to={`/products/${category.id}`}
+                                        onClick={handleLinkClick} // Close Offcanvas on click
+                                    >
                                         {category.name}
                                     </Link>
                                 )}
