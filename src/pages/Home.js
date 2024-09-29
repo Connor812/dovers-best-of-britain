@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { PostData } from "../utils/PostData";
 import Logo from "../assets/images/logo-white-bg.png";
 import { Row, Col, Carousel } from "react-bootstrap";
 
@@ -8,6 +9,19 @@ import { GoSearch } from "react-icons/go";
 import "../assets/css/home.css";
 
 function Home() {
+
+    useEffect(() => {
+        const searchTerm = "pie";
+
+        PostData("search-items.php", { search_term: searchTerm }).then((result) => {
+            console.log(result);
+        })
+
+
+
+    }, []);
+
+
     return (
         <main>
 
@@ -15,7 +29,7 @@ function Home() {
                 <div className="hero-container">
                     <img src={Logo} alt="Logo" className="home-logo" />
                     <div className="hero-text">
-                        <span className="time-regular">Dovers Best Of Britain</span>
+                        <span className="time-regular">Dover's Best Of Britain</span>
                         <br />
                         <p>
                             Dover's Best of Britain is proud to bring a taste of the UK to Port Dover and the surrounding areas with a delicious assortment of freshly baked British pies, pastries, and sweets. Our pies are baked fresh daily, using authentic recipes that capture the flavors of Britain, bringing comfort and nostalgia to those familiar with British cuisine, while offering a delightful new experience to others.

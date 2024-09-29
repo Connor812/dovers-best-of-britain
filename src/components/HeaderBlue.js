@@ -5,6 +5,7 @@ import { PostData } from "../utils/PostData";
 import { BsCart4 } from "react-icons/bs";
 import { IoMenu } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
+import { GoSearch } from "react-icons/go";
 
 function HeaderBlue() {
     const [show, setShow] = useState(false);
@@ -55,6 +56,7 @@ function HeaderBlue() {
                         <Link onClick={handleShow}>Shop</Link>
                     </li>
                 </ul>
+                <Link className="header-search-icon" to="/search"><GoSearch /></Link>
                 <Link className="shopping-cart-icon" to="/cart"><BsCart4 /></Link>
             </nav>
             <Offcanvas show={show} onHide={handleClose}>

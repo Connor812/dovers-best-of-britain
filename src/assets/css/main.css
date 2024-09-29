@@ -98,7 +98,15 @@ nav ul li a {
   cursor: pointer;
 }
 
-.shopping-cart-icon svg {
+.header-search-icon {
+  position: absolute;
+  right: 60px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+.shopping-cart-icon svg,
+.header-search-icon svg {
   width: 30px;
   height: 30px;
   color: var(--white);

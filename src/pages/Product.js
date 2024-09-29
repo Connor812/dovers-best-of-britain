@@ -116,8 +116,10 @@ function Product() {
         addToCartBtn.current.disabled = true;
 
         setTimeout(() => {
-            setAddToCartBtnText("Add To Cart");
-            addToCartBtn.current.disabled = false;
+            if (addToCartBtn.current) {
+                setAddToCartBtnText("Add To Cart");
+                addToCartBtn.current.disabled = false;
+            }
         }, 4000);
 
     }
