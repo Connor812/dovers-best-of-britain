@@ -1,3 +1,18 @@
+.admin-header {
+  background-color: var(--blue);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.change-status-btn {
+  background-color: var(--white) !important;
+  color: var(--blue) !important;
+  border: none !important;
+}
+
 .barcode-container {
   display: flex;
   justify-content: center;

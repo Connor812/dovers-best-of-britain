@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { PostData } from "../utils/PostData";
 import { GoSearch } from "react-icons/go";
 import { Spinner } from "react-bootstrap";
 import "../assets/css/shop-products.css";
 
 function ShopProducts() {
-
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState([]); // Ensure this is initialized as an empty array
     const [relatedObjects, setRelatedObjects] = useState([]);
     const [categoryName, setCategoryName] = useState("");
@@ -21,10 +20,9 @@ function ShopProducts() {
                 if (!response.status) {
                     setError(response.error);
                 } else {
-                    // Ensure products is always an array
-                    setProducts(Array.isArray(response.objects) ? response.objects : []);
+                    setProducts(response.items || []);
                     setRelatedObjects(response.related_objects || []);
-                    setCategoryName(response.category_name || "Unknown Category");
+                    setLoading(false);
                 }
                 setLoading(false);
             })
@@ -33,6 +31,16 @@ function ShopProducts() {
                 setLoading(false);
             });
     }
+
+    const handleInputChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            searchProducts();
+        }
+    };
 
     function getImage(product) {
         if (product.item_data?.image_ids?.length > 0) {
@@ -48,39 +56,39 @@ function ShopProducts() {
             <h1 className="shopping-category-name">{categoryName}</h1>
             <center>
                 <div className="home-search-container">
-                    <input type="text" className="home-search" placeholder="Enter product name, SKU etc..." />
-                    <button className="search-icon">
+                    <input
+                        type="text"
+                        className="home-search"
+                        placeholder="Enter product name, SKU etc..."
+                        value={searchTerm}
+                        onChange={handleInputChange}
+                        onKeyDown={handleKeyDown} // Run search on Enter key press
+                    />
+                    <button className="search-icon" onClick={searchProducts}>
                         <GoSearch />
                     </button>
                 </div>
             </center>
             <center>
                 <section className="product-page">
-
-                    {loading ?
-                        (
-                            <Spinner animation="border" role="status" />
-                        ) :
-                        products.length === 0 ? (
-                            <h1 className="blue time-regular">
-                                No Products Under This Category
-                            </h1>
-                        ) : (
-                            products.map((product, index) => (
-                                <Link key={index} to={`/product/${product.id}`} className="product-container">
-                                    <div className="product">
-                                        <div className="product-image-container">
-                                            <img className="product-image" src={getImage(product)} alt="product" />
-                                        </div>
-                                        <div className="shop-product-name">
-                                            {product.item_data.name}
-                                        </div>
+                    {loading ? (
+                        <Spinner animation="border" role="status" />
+                    ) : products.length === 0 ? (
+                        <h1 className="blue time-regular">No Products Under This Category</h1>
+                    ) : (
+                        products.map((product, index) => (
+                            <Link key={index} to={`/product/${product.id}`} className="product-container">
+                                <div className="product">
+                                    <div className="product-image-container">
+                                        <img className="product-image" src={getImage(product)} alt="product" />
                                     </div>
-                                </Link>
-                            ))
-                        )
-
-                    }
+                                    <div className="shop-product-name">
+                                        {product.item_data.name}
+                                    </div>
+                                </div>
+                            </Link>
+                        ))
+                    )}
                 </section>
             </center>
         </main>

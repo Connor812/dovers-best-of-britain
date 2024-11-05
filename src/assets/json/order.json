@@ -1,0 +1,282 @@
+[
+  {
+    "order": {
+      "id": "NG979Bz00seb3hjoMvEYeydNTQFZY",
+      "location_id": "LEFYSCPQ5AFJF",
+      "line_items": [
+        {
+          "uid": "aVWXSCwbs6zZDuLZG6egQC",
+          "catalog_object_id": "EP5MKBMT6REV4WPC3YIWWRXA",
+          "catalog_version": 1727111294949,
+          "quantity": "1",
+          "name": "Chocolate",
+          "variation_name": "Regular",
+          "base_price_money": {
+            "amount": 1000,
+            "currency": "CAD"
+          },
+          "gross_sales_money": {
+            "amount": 1000,
+            "currency": "CAD"
+          },
+          "total_tax_money": {
+            "amount": 0,
+            "currency": "CAD"
+          },
+          "total_discount_money": {
+            "amount": 0,
+            "currency": "CAD"
+          },
+          "total_money": {
+            "amount": 1000,
+            "currency": "CAD"
+          },
+          "variation_total_price_money": {
+            "amount": 1000,
+            "currency": "CAD"
+          },
+          "item_type": "ITEM",
+          "total_service_charge_money": {
+            "amount": 0,
+            "currency": "CAD"
+          }
+        }
+      ],
+      "fulfillments": [
+        {
+          "uid": "LOZ2fxywC96NpIcoLO1XXC",
+          "type": "SHIPMENT",
+          "state": "PROPOSED",
+          "shipment_details": {
+            "recipient": {
+              "display_name": "Connor Savoy",
+              "email_address": "connorsavoy812@gmail.com",
+              "phone_number": "5194038039",
+              "address": {
+                "address_line_1": "1171 12 concession",
+                "locality": "Langton",
+                "administrative_district_level_1": "ON",
+                "postal_code": "N0E1G0",
+                "country": "CA",
+                "first_name": "Connor",
+                "last_name": "Savoy"
+              }
+            }
+          }
+        }
+      ],
+      "created_at": "2024-09-30T20:17:11.165Z",
+      "updated_at": "2024-09-30T20:17:11.165Z",
+      "state": "OPEN",
+      "version": 1,
+      "total_tax_money": {
+        "amount": 0,
+        "currency": "CAD"
+      },
+      "total_discount_money": {
+        "amount": 0,
+        "currency": "CAD"
+      },
+      "total_tip_money": {
+        "amount": 0,
+        "currency": "CAD"
+      },
+      "total_money": {
+        "amount": 1000,
+        "currency": "CAD"
+      },
+      "total_service_charge_money": {
+        "amount": 0,
+        "currency": "CAD"
+      },
+      "net_amounts": {
+        "total_money": {
+          "amount": 1000,
+          "currency": "CAD"
+        },
+        "tax_money": {
+          "amount": 0,
+          "currency": "CAD"
+        },
+        "discount_money": {
+          "amount": 0,
+          "currency": "CAD"
+        },
+        "tip_money": {
+          "amount": 0,
+          "currency": "CAD"
+        },
+        "service_charge_money": {
+          "amount": 0,
+          "currency": "CAD"
+        }
+      },
+      "source": {
+        "name": "Sandbox for sq0idp-QeDNasIXMeYe7Mmq35aafQ"
+      },
+      "net_amount_due_money": {
+        "amount": 1000,
+        "currency": "CAD"
+      }
+    }
+  },
+  {
+    "order": {
+      "order": {
+        "id": "zSirEzMtkKetJ6JcAUblw6PSElHZY",
+        "location_id": "L7DZSNMWB5XTT",
+        "source": {
+          "name": "Dovers Best Of Britain"
+        },
+        "line_items": [
+          {
+            "uid": "7gXwzGRhMsbyx1InO3Fk2D",
+            "name": "Walkers Crisp Classic Variety",
+            "quantity": "1",
+            "catalog_object_id": "5D7I5FQHJKIHQZBWWTRWQAPF",
+            "catalog_version": 1727812333866,
+            "variation_name": "Regular",
+            "item_type": "ITEM",
+            "base_price_money": {
+              "amount": 699,
+              "currency": "CAD"
+            },
+            "variation_total_price_money": {
+              "amount": 699,
+              "currency": "CAD"
+            },
+            "gross_sales_money": {
+              "amount": 699,
+              "currency": "CAD"
+            },
+            "total_tax_money": {
+              "amount": 0,
+              "currency": "CAD"
+            },
+            "total_discount_money": {
+              "amount": 0,
+              "currency": "CAD"
+            },
+            "total_money": {
+              "amount": 699,
+              "currency": "CAD"
+            },
+            "total_service_charge_money": {
+              "amount": 0,
+              "currency": "CAD"
+            }
+          },
+          {
+            "uid": "Mix1IPbaa0yiIEKcb7mEB",
+            "name": "HST",
+            "quantity": "1",
+            "item_type": "ITEM",
+            "base_price_money": {
+              "amount": 91,
+              "currency": "CAD"
+            },
+            "variation_total_price_money": {
+              "amount": 91,
+              "currency": "CAD"
+            },
+            "gross_sales_money": {
+              "amount": 91,
+              "currency": "CAD"
+            },
+            "total_tax_money": {
+              "amount": 0,
+              "currency": "CAD"
+            },
+            "total_discount_money": {
+              "amount": 0,
+              "currency": "CAD"
+            },
+            "total_money": {
+              "amount": 91,
+              "currency": "CAD"
+            },
+            "total_service_charge_money": {
+              "amount": 0,
+              "currency": "CAD"
+            }
+          }
+        ],
+        "fulfillments": [
+          {
+            "uid": "vUEPDR0kTPW6c9MfklvyfB",
+            "type": "PICKUP",
+            "state": "PROPOSED",
+            "pickup_details": {
+              "recipient": {
+                "display_name": "Connor Savoy",
+                "email_address": "connorsavoy812@gmail.com",
+                "phone_number": "5194038039",
+                "address": {
+                  "address_line_1": "1171 12 concession",
+                  "locality": "Langton",
+                  "administrative_district_level_1": "ON",
+                  "postal_code": "N0E1G0",
+                  "country": "CA",
+                  "first_name": "Connor",
+                  "last_name": "Savoy"
+                }
+              },
+              "schedule_type": "SCHEDULED",
+              "pickup_at": "2024-10-02T00:00:00.000Z"
+            }
+          }
+        ],
+        "net_amounts": {
+          "total_money": {
+            "amount": 790,
+            "currency": "CAD"
+          },
+          "tax_money": {
+            "amount": 0,
+            "currency": "CAD"
+          },
+          "discount_money": {
+            "amount": 0,
+            "currency": "CAD"
+          },
+          "tip_money": {
+            "amount": 0,
+            "currency": "CAD"
+          },
+          "service_charge_money": {
+            "amount": 0,
+            "currency": "CAD"
+          }
+        },
+        "created_at": "2024-10-01T20:02:21.021Z",
+        "updated_at": "2024-10-01T20:02:21.021Z",
+        "state": "OPEN",
+        "version": 1,
+        "total_money": {
+          "amount": 790,
+          "currency": "CAD"
+        },
+        "total_tax_money": {
+          "amount": 0,
+          "currency": "CAD"
+        },
+        "total_discount_money": {
+          "amount": 0,
+          "currency": "CAD"
+        },
+        "total_tip_money": {
+          "amount": 0,
+          "currency": "CAD"
+        },
+        "total_service_charge_money": {
+          "amount": 0,
+          "currency": "CAD"
+        },
+        "net_amount_due_money": {
+          "amount": 790,
+          "currency": "CAD"
+        }
+      }
+    }
+  }
+]

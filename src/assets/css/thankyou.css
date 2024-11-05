@@ -1,0 +1,15 @@
+.thankyou-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+.thankyou {
+  font-size: var(--x-large);
+}
+
+.thankyou-message {
+  font-size: var(--medium);
+}

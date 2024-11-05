@@ -42,13 +42,15 @@ function Cart() {
 
     return (
         <main>
-            <h1>Cart</h1>
+            <div className="cart-header">
+                <h1 className="time-regular">Your Cart</h1>
+            </div>
             <section className="cart-container">
                 <div className="cart-items-container">
                     <Row className="cart-table-headings">
-                        <Col md={6}>Item</Col>
-                        <Col md={3}>Quantity</Col>
-                        <Col md={3}>Subtotal</Col>
+                        <Col sm={4} md={6}>Item</Col>
+                        <Col sm={4} md={3}>Quantity</Col>
+                        <Col sm={4} md={3}>Subtotal</Col>
                     </Row>
                     {cartItems.length === 0 ? (
                         <div>Cart is empty</div>
@@ -109,8 +111,8 @@ function Cart() {
                             <div>Total:</div>
                             <div>{formatCart(total)}</div>
                         </div>
-                        <div>
-                            <button className="checkout-btn">Proceed To Checkout</button>
+                        <div className="checkout-btn-container">
+                            <Link to="/checkout" className="checkout-btn">Proceed To Checkout</Link>
                         </div>
                     </div>
                 </div>
